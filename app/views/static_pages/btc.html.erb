@@ -1,0 +1,50 @@
+<div class="row">
+	<div class=container>
+		<h1>BTC/USDT</h1>
+		<h2>Actual price: <%= @price %></h2>
+	</div>
+	<div class="container">
+		<div class="row">
+		<div class="col-md-6">
+			<table class="table">
+			  <thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">BID Price</th>
+			      <th scope="col">Amount</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	<% @bid.each_with_index do |(bid, amount), index| %>
+				    <tr>
+				      <th scope="row"><%= index %></th>
+				      <td><%= bid %></td>
+				      <td><%= amount %></td>
+				    </tr>
+			   	<% end -%>
+			  </tbody>
+			</table>
+		</div>
+		<div class="col-md-6">
+			<table class="table">
+			  <thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">ASK Price</th>
+			      <th scope="col">Amount</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	<% @ask.each_with_index do |(ask, amount), index| %>
+				    <tr>
+				      <th scope="row"><%= index %></th>
+				      <td><%= ask %></td>
+				      <td><%= amount %></td>
+				    </tr>
+			   	<% end -%>
+			  </tbody>
+			</table>
+		</div>
+	</div>
+	</div>
+</div>
