@@ -16,7 +16,7 @@
 			  </thead>
 			  <tbody>
 			  	<% @bid.each_with_index do |(bid, amount), index| %>
-				    <tr>
+				    <tr <%='style= background:rgb(252,199,199);' if amount > 50 %>>
 				      <th scope="row"><%= index %></th>
 				      <td><%= bid %></td>
 				      <td><%= amount %></td>
@@ -36,7 +36,7 @@
 			  </thead>
 			  <tbody>
 			  	<% @ask.each_with_index do |(ask, amount), index| %>
-				    <tr>
+				    <tr <%='style= background:rgb(252,199,199);' if amount > 50 %>>
 				      <th scope="row"><%= index %></th>
 				      <td><%= ask %></td>
 				      <td><%= amount %></td>
