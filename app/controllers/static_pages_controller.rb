@@ -8,14 +8,14 @@ class StaticPagesController < ApplicationController
   	resp = Net::HTTP.get_response(URI.parse(url))
     data = JSON.parse(resp.body)
     data['bids'].each do |bid|
-    	if bid[1].to_f > 3
-			@bid.store(bid[0].to_f.round(2), bid[1].to_f.round(2))
+    	if bid[1].to_f > 5
+			@bid.store(bid[0].to_f.round(0), bid[1].to_f.round(0))
     	end
     end
 
     data['asks'].each do |ask|
-	   	if ask[1].to_f > 3
-			@ask.store(ask[0].to_f.round(2), ask[1].to_f.round(2))
+	   	if ask[1].to_f > 5
+			@ask.store(ask[0].to_f.round(0), ask[1].to_f.round(0))
 	    end
 	end 
 
@@ -33,14 +33,14 @@ class StaticPagesController < ApplicationController
   	resp = Net::HTTP.get_response(URI.parse(url))
     data = JSON.parse(resp.body)
     data['bids'].each do |bid|
-    	if bid[1].to_f >= 50
-			@bid.store(bid[0].to_f.round(2), bid[1].to_f.round(2))
+    	if bid[1].to_f >= 100
+			@bid.store(bid[0].to_f.round(0), bid[1].to_f.round(0))
     	end
     end
 
     data['asks'].each do |ask|
-	   	if ask[1].to_f >= 50
-			@ask.store(ask[0].to_f.round(2), ask[1].to_f.round(2))
+	   	if ask[1].to_f >= 100
+			@ask.store(ask[0].to_f.round(0), ask[1].to_f.round(0))
 	    end
 	end 
 
@@ -58,13 +58,13 @@ class StaticPagesController < ApplicationController
     data = JSON.parse(resp.body)
     data['bids'].each do |bid|
     	if bid[1].to_f > 500
-			@bid.store(bid[0].to_f.round(2), bid[1].to_f.round(2))
+			@bid.store(bid[0].to_f.round(0), bid[1].to_f.round(0))
     	end
     end
 
     data['asks'].each do |ask|
 	   	if ask[1].to_f > 500
-			@ask.store(ask[0].to_f.round(2), ask[1].to_f.round(2))
+			@ask.store(ask[0].to_f.round(0), ask[1].to_f.round(0))
 	    end
 	end 
 
@@ -83,13 +83,13 @@ class StaticPagesController < ApplicationController
     data = JSON.parse(resp.body)
     data['bids'].each do |bid|
     	if bid[1].to_f > 100000
-			@bid.store(bid[0].to_f.round(2), bid[1].to_f.round(2))
+			@bid.store(bid[0].to_f.round(0), bid[1].to_f.round(0))
     	end
     end
 
     data['asks'].each do |ask|
 	   	if ask[1].to_f > 100000
-			@ask.store(ask[0].to_f.round(2), ask[1].to_f.round(2))
+			@ask.store(ask[0].to_f.round(0), ask[1].to_f.round(0))
 	    end
 	end 
 
