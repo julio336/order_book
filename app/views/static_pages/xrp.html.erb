@@ -1,6 +1,6 @@
 <div class="container">
 	<div class=container>
-		<h1>BTC/USDT</h1>
+		<h1>XRP/USDT</h1>
 		<h2>Actual price: <%= @price %></h2>
 	</div>
 	<div class="container">
@@ -16,7 +16,7 @@
 			  </thead>
 			  <tbody>
 			  	<% @bid.each_with_index do |(bid, amount), index| %>
-				    <tr <%='style= background:rgb(252,199,199);' if amount > 10 %>>
+				    <tr <%='style= background:rgb(252,199,199);' if amount > 1000000 %>>
 				      <th scope="row"><%= index %></th>
 				      <td><%= bid %></td>
 				      <td><%= amount %></td>
@@ -36,7 +36,7 @@
 			  </thead>
 			  <tbody>
 			  	<% @ask.each_with_index do |(ask, amount), index| %>
-				    <tr <%='style= background:rgb(252,199,199);' if amount > 10 %>>
+				    <tr <%='style= background:rgb(252,199,199);' if amount > 1000000 %>>
 				      <th scope="row"><%= index %></th>
 				      <td><%= ask %></td>
 				      <td><%= amount %></td>
