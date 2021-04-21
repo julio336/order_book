@@ -14,3 +14,7 @@
  *= require_self
  */
 
+
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}

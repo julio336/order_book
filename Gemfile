@@ -20,6 +20,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootstrap', '~> 5.0.0.beta2'
 gem 'jquery-rails'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'coffee-script-source', '~> 1.11', '>= 1.11.1'
+
 #gem 'install json'
 
 
