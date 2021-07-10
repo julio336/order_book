@@ -133,13 +133,13 @@ class StaticPagesController < ApplicationController
       data = JSON.parse(resp.body)
       data['bids'].each do |bid|
         if bid[1].to_f > 100000
-        @bid.store(bid[0].to_f.round(2), bid[1].to_f.round(2))
+        @bid.store(bid[0].to_f.round(3), bid[1].to_f.round(3))
         end
       end
 
       data['asks'].each do |ask|
         if ask[1].to_f > 100000
-        @ask.store(ask[0].to_f.round(2), ask[1].to_f.round(2))
+        @ask.store(ask[0].to_f.round(3), ask[1].to_f.round(3))
         end
     end 
 
