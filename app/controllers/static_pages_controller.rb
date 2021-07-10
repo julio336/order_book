@@ -132,13 +132,13 @@ class StaticPagesController < ApplicationController
       resp = Net::HTTP.get_response(URI.parse(url))
       data = JSON.parse(resp.body)
       data['bids'].each do |bid|
-        if bid[1].to_f > 100000
+        if bid[1].to_f > 10000
         @bid.store(bid[0].to_f.round(3), bid[1].to_f.round(3))
         end
       end
 
       data['asks'].each do |ask|
-        if ask[1].to_f > 100000
+        if ask[1].to_f > 10000
         @ask.store(ask[0].to_f.round(3), ask[1].to_f.round(3))
         end
     end 
