@@ -4,18 +4,19 @@ class StaticPagesController < ApplicationController
   def btc
 	@bid = Hash.new
     @ask = Hash.new
-  	url = "https://api.binance.com/api/v3/depth?symbol=BTCUSDT&limit=5000"
+  	#url = "https://api.binance.com/api/v3/depth?symbol=BTCUSDT&limit=5000"
+    url = "https://fapi.binance.com/fapi/v1/depth?symbol=BTCUSDT&limit=1000"
   	resp = Net::HTTP.get_response(URI.parse(url))
     data = JSON.parse(resp.body)
     data['bids'].each do |bid|
     	if bid[1].to_f > 5
-			@bid.store(bid[0].to_f.round(0), bid[1].to_f.round(0))
+			  @bid.store(bid[0].to_f.round(0), bid[1].to_f.round(0))
     	end
     end
 
     data['asks'].each do |ask|
 	   	if ask[1].to_f > 5
-			@ask.store(ask[0].to_f.round(0), ask[1].to_f.round(0))
+			  @ask.store(ask[0].to_f.round(0), ask[1].to_f.round(0))
 	    end
 	end 
 
